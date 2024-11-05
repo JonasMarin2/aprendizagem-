@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmos de Ordenação</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scriptord.js" defer></script>
+    <script src="lateral.js" defer></script>
+</head>
+<body>
+ 
+    <button id="menu-btn">☰</button>
+
+    <nav id="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="contato.html">Contato</a></li> 
+            <li><a href="codigos.html">Códigos</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Algoritmos de Ordenação</h1>
+    </header>
+
+    <section class="container">
+        <label for="numQuantidade">Quantidade de Números:</label>
+        <input type="number" id="numQuantidade" min="1" placeholder="Digite um número">
+        
+        <label for="tipoOrdenacao">Escolha o Algoritmo:</label>
+        <select id="tipoOrdenacao">
+            <option value="bubble">Bubble Sort</option>
+            <option value="insertion">Insertion Sort</option>
+            <option value="selection">Selection Sort</option>
+        </select>
+        
+        <button id="gerarNumeros">Gerar Números Aleatórios</button>
+        <button id="ordenarCrescente">Ordenar Crescente</button>
+        <button id="ordenarDecrescente">Ordenar Decrescente</button>
+
+        <div id="resultado"></div>
+    </section>
+
+    <footer>
+        <p class="footerT">&copy; 2024 Empresa de Desenvolvimento Web</p>
+        <p class="footerT">Por Jonas Luiz Marin - 2B</p>
+    </footer>
+</body>
+</html>

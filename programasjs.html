@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Programas em JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="scripts.js" defer></script>
+    <script src="lateral.js" defer></script>
+</head>
+<body>
+
+    <!-- Botão de Menu -->
+        <button id="menu-btn">☰</button>
+
+    <!-- Barra de navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="codigos.html">Códigos</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Programas Implementados em JavaScript</h1>
+        <p>Abaixo estão exemplos de programas JavaScript que utilizamos para exemplificar alguns de nossos trabalhos feito usando JS</p>
+    </header>
+
+    <!-- Programas em JavaScript -->
+    <section id="programas-js">
+        <h2>Programas em JavaScript</h2>
+
+        <h3>Exemplo 1: Simulador de Escavação de Fósseis</h3>
+        <label for="nivel">Nível de Escavação (0-10):</label>
+        <input type="number" id="nivel" placeholder="Digite o nível">
+        <button onclick="mostrarResultadoEscavacao()">Escavar</button>
+        <div id="resultado-escavacao"></div>
+
+        <h3>Exemplo 2: Conversor de Eras Geológicas</h3>
+        <label for="ano">Ano:</label>
+        <input type="number" id="ano" placeholder="Digite um ano">
+        <button onclick="mostrarResultadoEra()">Converter</button>
+        <div id="resultado-era"></div>
+
+        <h3>Exemplo 3: Calculadora de Tempo para Extinção</h3>
+        <label for="anos">Anos:</label>
+        <input type="number" id="anos" placeholder="Digite os anos">
+        <button onclick="mostrarResultadoExtincao()">Calcular</button>
+        <div id="resultado-extincao"></div>
+    </section>
+
+    <footer>
+        <p class="footerT">&copy; 2024 Empresa de Desenvolvimento Web</p>
+        <p class="footerT">Por Jonas Luiz Marin - 2B</p>
+    </footer>
+
+</body>
+</html>

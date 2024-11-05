@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="lateral.js"></script>
+</head>
+<body>
+
+    <!-- Botão de Menu -->
+    <button id="menu-btn">☰</button>
+
+    <!-- Barra de Navegação -->
+    <nav id="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Contato</h1>
+        <p>Entre em contato conosco para mais informações sobre serviços.</p>
+    </header>
+
+    <!-- Conteúdo abordado -->
+    <section>
+        <h2>Formas de Contato</h2>
+        <p>Você pode entrar em contato conosco através das seguintes opções:</p>
+
+        <ul>
+            <li><strong>Email:</strong>jonasmarin209@gmail.com</li>
+            <li><strong>Telefone:</strong> (54) 98117-0391</li>
+            <li><strong>Endereço:</strong>Rua das Palmeiras, 123 - Centro, Tijucas, SC</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Formulário de Contato</h2>
+        <p>Preencha o formulário abaixo e nós responderemos o mais breve possível:</p>
+        <form action="mailto:contato@museueducacional.com" method="post" enctype="text/plain">
+            <label for="name">Nome:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Mensagem:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+      <!-- Rodapé -->
+      <footer>
+        <p class="footerT">&copy; 2024 Empresa de Desenvolvimento Web</p>
+        <p class="footerT">Por Jonas Luiz Marin - 2B</p>
+    </footer>
+
+
+</body>
+</html>
