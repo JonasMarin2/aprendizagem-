@@ -194,6 +194,15 @@ iframe {
     display: block;
     margin: 0 auto;
 }
+iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    border: 0;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    overflow: hidden;
+}
 
 
 @media (max-width: 768px) {
