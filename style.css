@@ -1,4 +1,4 @@
-/* Manter estilos iniciais */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -7,36 +7,33 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('background-dinosaurs.jpg');
-    background-size: cover;
+    background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
 }
 
-h1, h2, h3 {
-    color: #2c3e50;
-}
-
+/* Botão do menu */
 #menu-btn {
     position: fixed;
     left: 10px;
     top: 10px;
     background-color: #7a5a31;
     color: #fff;
-    padding: 15px;
+    padding: 10px 15px;
     border: none;
     font-size: 20px;
     cursor: pointer;
     z-index: 1000;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #menu-btn:hover {
     background-color: #9c7b4b;
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
+/* Barra lateral (nav) */
 nav {
     position: fixed;
     left: -250px;
@@ -44,9 +41,10 @@ nav {
     width: 250px;
     height: 100%;
     background-color: #7a5a31;
-    padding-top: 60px;  
+    padding-top: 20px;
     transition: left 0.3s ease;
     overflow-x: hidden;
+    z-index: 999;
 }
 
 nav ul {
@@ -55,13 +53,13 @@ nav ul {
 }
 
 nav ul li {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 nav ul li a {
     color: #f1e0c5;
     text-decoration: none;
-    font-size: 20px; 
+    font-size: 18px;
     display: block;
     transition: color 0.3s ease;
 }
@@ -74,149 +72,49 @@ nav.open {
     left: 0;
 }
 
-header {
+/* Conteúdo principal */
+main {
+    margin-left: 10px;
     padding: 20px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
+}
+
+main h1 {
+    font-size: 28px;
+    color: #2c3e50;
     margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 32px;
-    color: #2c3e50;
-}
-
-section {
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    margin: 20px auto;
-    max-width: 900px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    font-size: 26px;
+main h2 {
+    font-size: 22px;
     color: #7a5a31;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-p {
-    font-size: 18px;
-    color: #444;
-}
-
-section ul {
-    list-style: none;
-    margin-top: 10px;
-}
-
-section ul li {
-    margin: 10px 0;
-}
-
-section ul li a {
-    color: #7a5a31;  
-    font-size: 20px;
-    text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-section ul li a:hover {
-    color: #5b3d1e;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
-}
-
-footer {
-    background-color: #7a5a31;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-input[type="number"] {
-    padding: 8px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100px;
-}
-
-/* Novo estilo para o seletor de algoritmo */
-#tipoOrdenacao {
-    padding: 8px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+main p {
     font-size: 16px;
-    background-color: #f9f9f9;
+    margin-bottom: 10px;
 }
 
-/* Estilos de botões */
-button {
-    padding: 10px 15px;
-    background-color: #444;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+main ul {
+    list-style: disc;
+    margin: 10px 0 20px 20px;
 }
 
-button:hover {
-    background-color: #555;
+main ul li {
+    margin-bottom: 8px;
 }
 
-div[id^="resultado"] {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #f4f4f4;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-weight: bold;
-}
-
-/* Estilo para o container */
-.container {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.footerT {
-    color: white;
-}
-
-iframe {
+main img {
+    max-width: 100%;
+    height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 10px 0;
 }
-iframe {
-    width: 100%;
-    max-width: 600px;
-    height: 450px;
-    border: 0;
-    border-radius: 15px; /* Bordas arredondadas */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    overflow: hidden;
-}
-
 
 @media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-    
-    header {
-        padding: 10px;
-    }
-
-    section {
-        padding: 15px;
-        margin: 15px;
+    #menu-btn {
+        padding: 8px 12px;
+        font-size: 18px;
     }
 
     nav {
@@ -227,7 +125,19 @@ iframe {
         font-size: 16px;
     }
 
-    #menu-btn {
-        padding: 8px;
+    main {
+        padding: 15px;
+    }
+
+    main h1 {
+        font-size: 24px;
+    }
+
+    main h2 {
+        font-size: 20px;
+    }
+
+    main p {
+        font-size: 14px;
     }
 }
