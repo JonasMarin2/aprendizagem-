@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Manter estilos iniciais */
 * {
     margin: 0;
     padding: 0;
@@ -7,33 +7,36 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-image: url('background-dinosaurs.jpg');
+    background-size: cover;
     color: #333;
     line-height: 1.6;
 }
 
-/* Botão do menu */
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
 #menu-btn {
     position: fixed;
     left: 10px;
     top: 10px;
     background-color: #7a5a31;
     color: #fff;
-    padding: 10px 15px;
+    padding: 15px;
     border: none;
     font-size: 20px;
     cursor: pointer;
     z-index: 1000;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s;
 }
 
 #menu-btn:hover {
     background-color: #9c7b4b;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-/* Barra lateral (nav) */
 nav {
     position: fixed;
     left: -250px;
@@ -41,10 +44,9 @@ nav {
     width: 250px;
     height: 100%;
     background-color: #7a5a31;
-    padding-top: 20px;
+    padding-top: 60px;  
     transition: left 0.3s ease;
     overflow-x: hidden;
-    z-index: 999;
 }
 
 nav ul {
@@ -53,13 +55,13 @@ nav ul {
 }
 
 nav ul li {
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
 nav ul li a {
     color: #f1e0c5;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px; 
     display: block;
     transition: color 0.3s ease;
 }
@@ -72,50 +74,149 @@ nav.open {
     left: 0;
 }
 
-/* Conteúdo principal */
-main {
-    margin-left: 10px;
+header {
     padding: 20px;
-}
-
-main h1 {
-    font-size: 28px;
-    color: #2c3e50;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
     margin-bottom: 20px;
 }
 
-main h2 {
-    font-size: 22px;
+h1 {
+    font-size: 32px;
+    color: #2c3e50;
+}
+
+section {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 26px;
     color: #7a5a31;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-main p {
-    font-size: 16px;
-    margin-bottom: 10px;
+p {
+    font-size: 18px;
+    color: #444;
 }
 
-main ul {
-    list-style: disc;
-    margin: 10px 0 20px 20px;
+section ul {
+    list-style: none;
+    margin-top: 10px;
 }
 
-main ul li {
-    margin-bottom: 8px;
-}
-
-main img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+section ul li {
     margin: 10px 0;
 }
 
-/* Responsividade */
+section ul li a {
+    color: #7a5a31;  
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+section ul li a:hover {
+    color: #5b3d1e;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
+}
+
+footer {
+    background-color: #7a5a31;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+input[type="number"] {
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100px;
+}
+
+/* Novo estilo para o seletor de algoritmo */
+#tipoOrdenacao {
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos de botões */
+button {
+    padding: 10px 15px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+div[id^="resultado"] {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+}
+
+/* Estilo para o container */
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.footerT {
+    color: white;
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    border: 0;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    overflow: hidden;
+}
+
+
 @media (max-width: 768px) {
-    #menu-btn {
-        padding: 8px 12px;
-        font-size: 18px;
+    body {
+        font-size: 14px;
+    }
+    
+    header {
+        padding: 10px;
+    }
+
+    section {
+        padding: 15px;
+        margin: 15px;
     }
 
     nav {
@@ -126,19 +227,6 @@ main img {
         font-size: 16px;
     }
 
-    main {
-        padding: 15px;
+    #menu-btn {
+        padding: 8px;
     }
-
-    main h1 {
-        font-size: 24px;
-    }
-
-    main h2 {
-        font-size: 20px;
-    }
-
-    main p {
-        font-size: 14px;
-    }
-}
