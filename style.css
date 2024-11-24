@@ -1,0 +1,312 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#sidebar {
+    position: fixed;
+    top: 80px;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding-top: 20px;
+    text-align: left;
+    transition: left 0.3s;
+}
+
+#sidebar ul {
+    padding: 0;
+    list-style: none;
+}
+
+#sidebar ul li {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+#menu-btn {
+    font-size: 30px;
+    color: #d84e4e;
+    background: transparent;
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+#menu-btn:hover {
+    background-color: #ddd;
+}
+
+header {
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+body, main, header, section, h1, h2, h3, h4, p, ul, li {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.imagem-componente {
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer .footerT {
+    margin: 0;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
+}
+
+.imagem-componente {
+    max-width: 100%;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+iframe {
+    width: 100%; /* O mapa ocupa toda a largura do container */
+    height: 300px; /* Ajusta a altura para ficar proporcional */
+    border: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+    main {
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    #sidebar {
+        width: 180px;
+        top: 80px; /* Garante que o sidebar não sobreponha o header */
+    }
+
+    #menu-btn {
+        font-size: 25px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 1.7em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 150px;
+        font-size: 14px;
+        top: 80px; /* Garante que o sidebar não sobreponha o header */
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    #sidebar {
+        position: relative; /* Permite que o sidebar faça parte do fluxo normal */
+        top: 0; /* Remove qualquer deslocamento */
+        left: 0; /* Alinha corretamente */
+        width: 100%; /* Faz o sidebar ocupar toda a largura */
+        height: auto; /* Ajusta automaticamente a altura */
+        padding: 10px 0; /* Adiciona espaçamento interno */
+        background-color: #333; /* Mantém o estilo */
+        z-index: 10; /* Garante que o sidebar esteja acima do conteúdo */
+    }
+
+    header {
+        padding: 5px 10px;
+        z-index: 5; /* Previne sobreposição com o sidebar */
+    }
+
+    main {
+        margin-top: 10px; /* Garante espaçamento entre header e conteúdo */
+    }
+
+    footer {
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 10px;
+    }
+
+    section {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    iframe {
+        height: 250px; /* Altura reduzida para tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    iframe {
+        height: 200px; /* Altura ajustada para celulares */
+    }
+}
+
+@media (max-width: 576px) {
+    iframe {
+        height: 150px; /* Altura mínima para telas pequenas */
+    }
+}
+
+@media (max-width: 992px) {
+    img {
+        max-width: 80%; /* Reduz a largura das imagens em telas de tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    img {
+        max-width: 70%; /* Reduz mais a largura em celulares */
+    }
+}
+
+@media (max-width: 576px) {
+    img {
+        max-width: 90%; /* Aumenta ligeiramente para telas pequenas */
+        margin-bottom: 15px; /* Espaço extra abaixo das imagens */
+    }
+}
+
+
+
