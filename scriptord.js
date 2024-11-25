@@ -1,52 +1,58 @@
-const resultadoDiv = document.querySelector("#resultado");
-let numeros = [];
+let numeros = [0, 0, 0, 0, 0, 0, 0];
+let valor_atual = 0;
 
-let gerarNumeros = () => {
-    numeros = Array.from({ length: 7 }, () => Math.floor(Math.random() * 100) + 1);
-    exibirResultado("7 Números Aleatórios", numeros);
-};
+// Gera um número aleatório entre min e max
+function aleatorio(max, min) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
-let ordenarNumeros = (ordem) => {
-    const algoritmo = document.querySelector("#tipoOrdenacao").value;
-    const sortedArray = {
-        bubble: bubbleSort,
-        insertion: insertionSort,
-        selection: selectionSort
-    }[algoritmo]([...numeros]);
-    exibirResultado(`Números em Ordem ${ordem === "asc" ? "Crescente" : "Decrescente"}`, ordem === "asc" ? sortedArray : sortedArray.reverse());
-};
-
-let bubbleSort = (array) => {
-    for (let i = 0; i < array.length - 1; i++)
-        for (let j = 0; j < array.length - 1 - i; j++)
-            if (array[j] > array[j + 1])
-                [array[j], array[j + 1]] = [array[j + 1], array[j]];
-    return array;
-};
-
-let insertionSort = (array) => {
-    for (let i = 1; i < array.length; i++) {
-        let j = i - 1, key = array[i];
-        while (j >= 0 && array[j] > key) array[j + 1] = array[j--];
-        array[j + 1] = key;
+// Preenche o array com números aleatórios
+function gerarmatriz() {
+    for (let i = 0; i < numeros.length; i++) {
+        numeros[i] = aleatorio(100, 1); // Valores entre 1 e 100
     }
-    return array;
-};
+    console.table(numeros);
+}
 
-let selectionSort = (array) => {
-    for (let i = 0; i < array.length; i++) {
-        let minIndex = i;
-        for (let j = i + 1; j < array.length; j++)
-            if (array[j] < array[minIndex]) minIndex = j;
-        [array[i], array[minIndex]] = [array[minIndex], array[i]];
+// Ordena os números em ordem crescente
+function ordenarCrescente(arr) {
+    for (let j = arr.length - 1; j > 0; j--) {
+        for (let i = 0; i < j; i++) {
+            if (arr[i] > arr[i + 1]) {
+                valor_atual = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = valor_atual;
+            }
+        }
+        console.log(arr);
     }
-    return array;
-};
+}
 
-let exibirResultado = (titulo, array) => {
-    resultadoDiv.innerHTML = `<h2>${titulo}</h2><p>${array.join(", ")}</p>`;
-};
+// Ordena os números em ordem decrescente
+function ordenarDecrescente(arr) {
+    for (let j = arr.length - 1; j > 0; j--) {
+        for (let i = 0; i < j; i++) {
+            if (arr[i] < arr[i + 1]) {
+                valor_atual = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = valor_atual;
+            }
+        }
+        console.log(arr);
+    }
+}
 
-document.querySelector("#gerarNumeros").addEventListener("click", gerarNumeros);
-document.querySelector("#ordenarCrescente").addEventListener("click", () => ordenarNumeros("asc"));
-document.querySelector("#ordenarDecrescente").addEventListener("click", () => ordenarNumeros("desc"));
+console.log("Array inicial:");
+console.log(numeros);
+console.log("--------------------");
+
+console.log("Gerando matriz de números aleatórios:");
+gerarmatriz();
+console.log("--------------------");
+
+console.log("Ordenando em ordem crescente:");
+ordenarCrescente(numeros);
+console.log("--------------------");
+
+console.log("Ordenando em ordem decrescente:");
+ordenarDecrescente(numeros);
