@@ -1,20 +1,20 @@
 let numeros = [0, 0, 0, 0, 0, 0, 0];
 let valor_atual = 0;
 
-// Gera um número aleatório entre min e max
+// Função para gerar um número aleatório entre min e max
 function aleatorio(max, min) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// Preenche o array com números aleatórios
+// Função para preencher o array com números aleatórios
 function gerarmatriz() {
     for (let i = 0; i < numeros.length; i++) {
-        numeros[i] = aleatorio(100, 1); // Valores entre 1 e 100
+        numeros[i] = aleatorio(100, 1); // Números entre 1 e 100
     }
-    console.table(numeros);
+    exibirResultado("Números Aleatórios", numeros);
 }
 
-// Ordena os números em ordem crescente
+// Função para ordenar em ordem crescente
 function ordenarCrescente(arr) {
     for (let j = arr.length - 1; j > 0; j--) {
         for (let i = 0; i < j; i++) {
@@ -24,11 +24,11 @@ function ordenarCrescente(arr) {
                 arr[i + 1] = valor_atual;
             }
         }
-        console.log(arr);
     }
+    exibirResultado("Números Ordenados Crescente", arr);
 }
 
-// Ordena os números em ordem decrescente
+// Função para ordenar em ordem decrescente
 function ordenarDecrescente(arr) {
     for (let j = arr.length - 1; j > 0; j--) {
         for (let i = 0; i < j; i++) {
@@ -38,21 +38,27 @@ function ordenarDecrescente(arr) {
                 arr[i + 1] = valor_atual;
             }
         }
-        console.log(arr);
     }
+    exibirResultado("Números Ordenados Decrescente", arr);
 }
 
-console.log("Array inicial:");
-console.log(numeros);
-console.log("--------------------");
+// Função para exibir o resultado no HTML
+function exibirResultado(titulo, array) {
+    const resultadoDiv = document.querySelector("#resultado");
+    resultadoDiv.innerHTML = ""; // Limpa o conteúdo anterior
 
-console.log("Gerando matriz de números aleatórios:");
-gerarmatriz();
-console.log("--------------------");
+    // Cria e adiciona o título
+    const tituloEl = document.createElement("div");
+    tituloEl.textContent = titulo;
+    resultadoDiv.appendChild(tituloEl);
 
-console.log("Ordenando em ordem crescente:");
-ordenarCrescente(numeros);
-console.log("--------------------");
+    // Cria e adiciona os números
+    const numerosEl = document.createElement("div");
+    numerosEl.textContent = array.join(", ");
+    resultadoDiv.appendChild(numerosEl);
+}
 
-console.log("Ordenando em ordem decrescente:");
-ordenarDecrescente(numeros);
+// Event Listeners para os botões
+document.querySelector("#gerarNumeros").addEventListener("click", gerarmatriz);
+document.querySelector("#ordenarCrescente").addEventListener("click", () => ordenarCrescente([...numeros]));
+document.querySelector("#ordenarDecrescente").addEventListener("click", () => ordenarDecrescente([...numeros]));
