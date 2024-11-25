@@ -1,12 +1,12 @@
 const resultadoDiv = document.querySelector("#resultado");
 let numeros = [];
 
-const gerarNumeros = () => {
+let gerarNumeros = () => {
     numeros = Array.from({ length: 7 }, () => Math.floor(Math.random() * 100) + 1);
     exibirResultado("7 Números Aleatórios", numeros);
 };
 
-const ordenarNumeros = (ordem) => {
+let ordenarNumeros = (ordem) => {
     const algoritmo = document.querySelector("#tipoOrdenacao").value;
     const sortedArray = {
         bubble: bubbleSort,
@@ -16,7 +16,7 @@ const ordenarNumeros = (ordem) => {
     exibirResultado(`Números em Ordem ${ordem === "asc" ? "Crescente" : "Decrescente"}`, ordem === "asc" ? sortedArray : sortedArray.reverse());
 };
 
-const bubbleSort = (array) => {
+let bubbleSort = (array) => {
     for (let i = 0; i < array.length - 1; i++)
         for (let j = 0; j < array.length - 1 - i; j++)
             if (array[j] > array[j + 1])
@@ -24,7 +24,7 @@ const bubbleSort = (array) => {
     return array;
 };
 
-const insertionSort = (array) => {
+let insertionSort = (array) => {
     for (let i = 1; i < array.length; i++) {
         let j = i - 1, key = array[i];
         while (j >= 0 && array[j] > key) array[j + 1] = array[j--];
@@ -33,7 +33,7 @@ const insertionSort = (array) => {
     return array;
 };
 
-const selectionSort = (array) => {
+let selectionSort = (array) => {
     for (let i = 0; i < array.length; i++) {
         let minIndex = i;
         for (let j = i + 1; j < array.length; j++)
@@ -43,7 +43,7 @@ const selectionSort = (array) => {
     return array;
 };
 
-const exibirResultado = (titulo, array) => {
+let exibirResultado = (titulo, array) => {
     resultadoDiv.innerHTML = `<h2>${titulo}</h2><p>${array.join(", ")}</p>`;
 };
 
