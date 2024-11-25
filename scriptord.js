@@ -38,14 +38,14 @@ function ordenarDecrescente(arr) {
     exibirResultado("Números Ordenados Decrescente", arr);
 }
 function exibirResultado(titulo, array) {
-    const resultadoDiv = document.querySelector("#resultado");
+    let resultadoDiv = document.querySelector("#resultado");
     resultadoDiv.innerHTML = ""; // Limpa o conteúdo anterior
 
-    const tituloEl = document.createElement("div");
+    let tituloEl = document.createElement("div");
     tituloEl.textContent = titulo;
     resultadoDiv.appendChild(tituloEl);
 
-    const numerosEl = document.createElement("div");
+    let numerosEl = document.createElement("div");
     numerosEl.textContent = array.join(", ");
     resultadoDiv.appendChild(numerosEl);
 }
